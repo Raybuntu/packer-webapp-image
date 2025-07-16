@@ -39,6 +39,10 @@ sudo rm -rf /opt/webapp/.git
 sudo chown -R webapp:webapp /opt/webapp
 sudo chmod -R 750 /opt/webapp
 
+# Set env file
+echo "REGION=${REGION}" | sudo tee /etc/webapp.env
+echo "MIG_NAME=${MIG_NAME}" | sudo tee -a /etc/webapp.env
+
 # Install systemd service for the webapp
 sudo cp /opt/webapp/webapp.service /etc/systemd/system/
 sudo systemctl daemon-reload

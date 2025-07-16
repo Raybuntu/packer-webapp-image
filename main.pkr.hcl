@@ -24,7 +24,9 @@ build {
     script = "scripts/setup_webapp.sh"
 
     environment_vars = [
-      "WEBAPP_REPO_URL=${var.webapp_git_repo_url}"
+      "WEBAPP_REPO_URL=${var.webapp_git_repo_url}",
+      "REGION=${var.region}",
+      "MIG_NAME=${var.mig_name}"
     ]
   }
 

@@ -9,4 +9,8 @@ steps:
       - "zone=$_ZONE"
       - -var
       - "webapp_git_repo_url=$_WEBAPP_GIT_REPO_URL"
+      - -var
+      - "region=$_REGION"
+      - -var
+      - "mig_name=$_MIG_NAME"
       - .

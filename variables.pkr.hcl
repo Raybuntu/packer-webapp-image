@@ -13,3 +13,12 @@ variable "webapp_git_repo_url" {
   description = "Git URL for our Repo"
 }
 
+variable "region" {
+  type        = string
+  description = "Region of the MIG"
+}
+
+variable "mig_name" {
+  type        = string
+  description = "Name of the Managed Instance Group"
+}
