@@ -8,13 +8,14 @@ packer {
 }
 
 source "googlecompute" "webapp" {
-  project_id  = var.project_id
-  zone        = var.zone
-  machine_type = "e2-micro"
-  source_image_family = "ubuntu-2404-lts"
-  image_name          = "webapp-image-{{timestamp}}"
-  image_family        = "webapp-family"
-  ssh_username        = "packer"
+  project_id           = var.project_id
+  zone                 = var.zone
+  machine_type         = "e2-micro"
+  source_image_family  = "ubuntu-2204-lts"
+  source_image_project = "ubuntu-os-cloud"
+  image_name           = "webapp-image-{{timestamp}}"
+  image_family         = "webapp-family"
+  ssh_username         = "packer"
 }
 
 build {
