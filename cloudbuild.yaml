@@ -2,6 +2,10 @@ steps:
   - name: hashicorp/packer:1.13
     entrypoint: packer
     args:
+      - init
+  - name: hashicorp/packer:1.13
+    entrypoint: packer
+    args:
       - build
       - -var
       - "project_id=$_PROJECT_ID"
