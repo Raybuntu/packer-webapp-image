@@ -1,0 +1,12 @@
+steps:
+  - name: hashicorp/packer:1.13
+    entrypoint: packer
+    args:
+      - build
+      - -var
+      - "project_id=$_PROJECT_ID"
+      - -var
+      - "zone=$_ZONE"
+      - -var
+      - "webapp_git_repo_url=$_WEBAPP_GIT_REPO_URL"
+      - .
