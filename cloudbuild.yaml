@@ -15,3 +15,5 @@ steps:
       - "mig_name=$_MIG_NAME"
       - .
 
+options:
+  logging: CLOUD_LOGGING_ONLY
