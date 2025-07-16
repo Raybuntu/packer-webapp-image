@@ -23,8 +23,8 @@ sudo systemctl stop unattended-upgrades
 sudo systemctl disable unattended-upgrades
 
 # Install webapp dependencies
-sudo apt-get install -y nginx git python3-flask python3-requests python3-pip
-sudo pip3 install google-auth google-api-python-client
+sudo apt-get install -y nginx git python3-requests python3-pip
+sudo pip3 install google-auth google-api-python-client flask
 
 # Clone webapp repository
 sudo git clone "$WEBAPP_REPO_URL" /opt/webapp
@@ -44,10 +44,9 @@ echo "MIG_NAME=${MIG_NAME}" | sudo tee -a /etc/webapp.env
 sudo cp /opt/webapp/webapp.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable webapp
-sudo systemctl start webapp
 
 # Configure nginx for the webapp
 sudo rm -f /etc/nginx/sites-enabled/default
 sudo cp /opt/webapp/webapp.conf /etc/nginx/sites-available/webapp
 sudo ln -sf /etc/nginx/sites-available/webapp /etc/nginx/sites-enabled/webapp
-sudo systemctl restart nginx
+sudo systemctl enable nginx
