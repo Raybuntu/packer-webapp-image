@@ -2,7 +2,8 @@ steps:
   - name: hashicorp/packer:1.13
     entrypoint: packer
     args:
-      - init "main.pkr.hcl"
+      - init
+      - "main.pkr.hcl"
   - name: hashicorp/packer:1.13
     entrypoint: packer
     args:
