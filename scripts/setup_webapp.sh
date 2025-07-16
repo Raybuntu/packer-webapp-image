@@ -17,9 +17,6 @@ sudo useradd --system --no-create-home --shell /usr/sbin/nologin webapp || true
 # System basics: update, upgrade, timezone, locale, keyboard layout
 sudo apt-get update -y
 sudo apt-get upgrade -y
-sudo timedatectl set-timezone Europe/Berlin
-sudo localectl set-locale LANG=de_DE.UTF-8
-sudo localectl set-keymap de-nodeadkeys
 
 # Disable unattended-upgrades.
 sudo systemctl stop unattended-upgrades
