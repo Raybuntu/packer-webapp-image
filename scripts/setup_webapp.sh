@@ -23,7 +23,7 @@ sudo systemctl stop unattended-upgrades
 sudo systemctl disable unattended-upgrades
 
 # Install webapp dependencies
-sudo apt-get install -y nginx git python3-requests python3-pip
+sudo apt-get install -y nginx git python3-requests python3-pip stress-ng
 sudo pip3 install google-auth google-api-python-client flask
 
 # Clone webapp repository
