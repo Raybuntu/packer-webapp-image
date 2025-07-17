@@ -4,6 +4,7 @@ set -e
 # echo for debugging purposes
 echo "Starting webapp setup..."
 echo "Repository URL: $WEBAPP_REPO_URL"
+echo "GIT SHA: $WEBAPP_GIT_SHA"
 
 # Check if Repor url is set
 if [ -z "${WEBAPP_REPO_URL:-}" ]; then
@@ -31,6 +32,14 @@ sudo pip3 install google-auth google-api-python-client flask
 
 # Clone webapp repository
 sudo git clone "$WEBAPP_REPO_URL" /opt/webapp
+
+# Checkout specific GIT SHA
+if [ -n "$WEBAPP_GIT_SHA" ]; then
+    OLDPWD=$(pwd)
+    cd /opt/webapp
+    sudo git checkout "$WEBAPP_GIT_SHA"
+    cd "$OLDPWD"
+fi
 
 # Remove .git directory for security and cleanup
 sudo rm -rf /opt/webapp/.git

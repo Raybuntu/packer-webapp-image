@@ -25,6 +25,7 @@ build {
 
     environment_vars = [
       "WEBAPP_REPO_URL=${var.webapp_git_repo_url}",
+      "WEBAPP_GIT_SHA=${var.webapp_git_sha}",
     ]
   }
 
