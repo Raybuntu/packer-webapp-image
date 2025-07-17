@@ -14,7 +14,10 @@ fi
 # Create system user for running the webapp service
 sudo useradd --system --no-create-home --shell /usr/sbin/nologin webapp || true
 
-# System basics: update, upgrade, timezone, locale, keyboard layout
+# Enable Universe
+sudo add-apt-repository universe -y
+
+# update, upgrade
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
