@@ -12,7 +12,7 @@ source "googlecompute" "webapp" {
   zone                 = var.zone
   machine_type         = "e2-micro"
   source_image_family  = "ubuntu-2204-lts"
-  image_name           = "webapp-image-{{timestamp}}"
+  image_name           = "webapp-image-${var.webapp_git_sha}-{{timestamp}}"
   image_family         = "webapp-family"
   ssh_username         = "packer"
 }
