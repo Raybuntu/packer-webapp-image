@@ -17,3 +17,8 @@ variable "webapp_git_sha" {
   type    = string
   description = "Git SHA for our Repo"
 }
+
+variable "packer_vm_sa_email" {
+  type        = string
+  description = "Email of the Service Account used by the Packer VM to create images"
+}
